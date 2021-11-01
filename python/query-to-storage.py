@@ -2,6 +2,7 @@
 
 # Libraries ... 
 from google.cloud import bigquery
+import sys
 
 
 def query_to_storage(PROJECT_ID, DATASET, TABLE, LOCATION, SQL_PATH, SQL_PATH, BUCKET_URI):
@@ -33,3 +34,11 @@ def query_to_storage(PROJECT_ID, DATASET, TABLE, LOCATION, SQL_PATH, SQL_PATH, B
         destination_uri,
         location=LOCATION)
     extract_job.result()  # Waits for job to complete
+
+
+if __name__ == "__main__":
+    args = sys.argv
+    # args[0] = current file
+    # args[1] = function name
+    # args[2:] = function args : (*unpacked)
+    globals()[args[1]](*args[2:])
