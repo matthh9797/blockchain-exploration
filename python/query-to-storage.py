@@ -5,7 +5,7 @@ from google.cloud import bigquery
 import sys
 
 
-def query_to_storage(PROJECT_ID, DATASET, TABLE, LOCATION, SQL_PATH, SQL_PATH, BUCKET_URI):
+def query_to_storage(PROJECT_ID, DATASET, TABLE, LOCATION, SQL_PATH, BUCKET_URI):
     QUERY = open(SQL_PATH).read()
 
     # bq client
